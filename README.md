@@ -6,7 +6,7 @@ this project has only one dependency https://libwebsockets.org/
 if you want to use https://conan.io/ the conanfile.txt is avaiable
 
 
-### ex to build with CLION + Conan
+#### example to build with CLION + Conan
 
 ```
 conan install . -s build_type=Debug --install-folder=cmake-build-debug --build missing
