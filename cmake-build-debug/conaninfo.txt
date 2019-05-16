@@ -1,0 +1,94 @@
+[settings]
+    arch=x86_64
+    build_type=Debug
+    compiler=gcc
+    compiler.libcxx=libstdc++11
+    compiler.version=8
+    os=Linux
+
+[requires]
+    libwebsockets/3.Y.Z
+
+[options]
+
+
+[full_settings]
+    arch=x86_64
+    arch_build=x86_64
+    build_type=Debug
+    compiler=gcc
+    compiler.libcxx=libstdc++11
+    compiler.version=8
+    os=Linux
+    os_build=Linux
+
+[full_requires]
+    OpenSSL/1.1.1b@zinnion/stable:9c111a8074926a7147291383e3d366f41bac77b3
+    OpenSSLV1/1.0.2r@zinnion/stable:9c111a8074926a7147291383e3d366f41bac77b3
+    libevent/2.1.8@zinnion/stable:fa3937b10fb24167c6f29ed4ca7d6827d94421c9
+    libwebsockets/3.1.0@zinnion/stable:a88f628cc50fbedee1b30b41aeab971b6d3a1d6c
+    zlib/1.2.11@zinnion/stable:761432f3453a17c960259b5b2605153e3bcffd7d
+
+[full_options]
+    OpenSSL:386=False
+    OpenSSL:no_asm=False
+    OpenSSL:no_async=False
+    OpenSSL:no_bf=False
+    OpenSSL:no_cast=False
+    OpenSSL:no_des=False
+    OpenSSL:no_dh=False
+    OpenSSL:no_dsa=False
+    OpenSSL:no_dso=False
+    OpenSSL:no_fpic=False
+    OpenSSL:no_hmac=False
+    OpenSSL:no_md2=False
+    OpenSSL:no_md5=False
+    OpenSSL:no_mdc2=False
+    OpenSSL:no_rc2=False
+    OpenSSL:no_rc4=False
+    OpenSSL:no_rc5=False
+    OpenSSL:no_rsa=False
+    OpenSSL:no_sha=False
+    OpenSSL:no_sse2=False
+    OpenSSL:no_threads=False
+    OpenSSL:no_zlib=False
+    OpenSSL:shared=False
+    OpenSSLV1:386=False
+    OpenSSLV1:no_asm=False
+    OpenSSLV1:no_bf=False
+    OpenSSLV1:no_cast=False
+    OpenSSLV1:no_des=False
+    OpenSSLV1:no_dh=False
+    OpenSSLV1:no_dsa=False
+    OpenSSLV1:no_fpic=False
+    OpenSSLV1:no_hmac=False
+    OpenSSLV1:no_md2=False
+    OpenSSLV1:no_md5=False
+    OpenSSLV1:no_mdc2=False
+    OpenSSLV1:no_rc2=False
+    OpenSSLV1:no_rc4=False
+    OpenSSLV1:no_rc5=False
+    OpenSSLV1:no_rsa=False
+    OpenSSLV1:no_sha=False
+    OpenSSLV1:no_sse2=False
+    OpenSSLV1:no_threads=False
+    OpenSSLV1:no_zlib=False
+    OpenSSLV1:shared=False
+    libevent:disable_threads=False
+    libevent:fPIC=True
+    libevent:shared=False
+    libevent:with_openssl=True
+    libwebsockets:lws_with_libevent=True
+    libwebsockets:lws_with_libuv=False
+    libwebsockets:lws_with_ssl=True
+    libwebsockets:lws_with_zlib=True
+    libwebsockets:shared=False
+    zlib:fPIC=True
+    zlib:minizip=False
+    zlib:shared=False
+
+[recipe_hash]
+
+
+[env]
+

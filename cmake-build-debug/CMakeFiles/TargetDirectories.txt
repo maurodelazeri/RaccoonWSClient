@@ -1,0 +1,3 @@
+/home/mauro/zinnion/RaccoonWSClient/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mauro/zinnion/RaccoonWSClient/cmake-build-debug/CMakeFiles/RaccoonWSClient.dir
+/home/mauro/zinnion/RaccoonWSClient/cmake-build-debug/CMakeFiles/edit_cache.dir
