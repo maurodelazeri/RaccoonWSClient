@@ -166,7 +166,7 @@ void WsRaccoonClient::netTask() {
     struct lws_client_connect_info clientInfo{};
     memset(&clientInfo, 0, sizeof(clientInfo));
     clientInfo.context = wsContext;
-    clientInfo.ssl_connection = LCCSCF_USE_SSL; //| LCCSCF_ALLOW_SELFSIGNED | LCCSCF_SKIP_SERVER_CERT_HOSTNAME_CHECK;
+    clientInfo.ssl_connection = LCCSCF_USE_SSL | LCCSCF_ALLOW_SELFSIGNED | LCCSCF_SKIP_SERVER_CERT_HOSTNAME_CHECK;
     clientInfo.host = this->address.c_str();
     clientInfo.address = this->address.c_str();
     clientInfo.port = this->port;
