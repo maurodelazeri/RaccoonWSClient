@@ -14,6 +14,10 @@ cmake .
 make
 ```
 
+`export SSL_CERT_FILE="~/ca-cert.pem"`
+
+
+
 You can set different parameters as you need, a full list of parameters can be found here https://libwebsockets.org/lws-api-doc-master/html/structlws__context__creation__info.html
 
 
