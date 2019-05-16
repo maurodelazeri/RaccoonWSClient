@@ -9,7 +9,7 @@ ex: with clion
 
 `conan install . -s build_type=Debug --install-folder=cmake-build-debug --build missing`
 
-Example of implemention to subscribe https://www.bitstamp.net/websocket/v2/
+Example of implemention to subscribe bitstamp https://www.bitstamp.net/websocket/v2/
 
 ```cpp
 
