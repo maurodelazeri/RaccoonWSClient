@@ -23,7 +23,7 @@ WsRaccoonClient::WsRaccoonClient(std::string *address, int port, std::string *pa
             "zinnion-protocol",
             on_websocket_callback,
             0,
-            20,
+            1024,
             0,
             this,
             0
@@ -103,6 +103,13 @@ int WsRaccoonClient::on_websocket_callback(struct lws *wsi,
             self->wsClient = nullptr;
             break;
         }
+
+        case LWS_SERVER_OPTION_FALLBACK_TO_RAW: {
+            cout << "[ws Connection destruction]" << endl;
+            self->wsClient = nullptr;
+            break;
+        }
+
         default: {
 //            RTC_LOG(LERROR) << "on_websocket_callback" << reason;
             break;
@@ -138,7 +145,7 @@ void WsRaccoonClient::netTask() {
     ctxInfo.protocols                = protocols_;
     ctxInfo.ssl_cert_filepath        = NULL;
     ctxInfo.ssl_private_key_filepath = NULL;
-    ctxInfo.extensions               = nullptr;
+    ctxInfo.extensions               = NULL;
     ctxInfo.gid                      = -1;
     ctxInfo.uid                      = -1;
     ctxInfo.options                 |= LWS_SERVER_OPTION_DO_SSL_GLOBAL_INIT;
@@ -148,7 +155,6 @@ void WsRaccoonClient::netTask() {
     ctxInfo.ka_time                  = 10;
     ctxInfo.ka_probes                = 10;
     ctxInfo.ka_interval              = 10;
-
     struct lws_context *wsContext = lws_create_context(&ctxInfo);
 
     if (wsContext == nullptr) {
@@ -160,8 +166,8 @@ void WsRaccoonClient::netTask() {
     struct lws_client_connect_info clientInfo{};
     memset(&clientInfo, 0, sizeof(clientInfo));
     clientInfo.context = wsContext;
-    clientInfo.ssl_connection = LCCSCF_USE_SSL | LCCSCF_ALLOW_SELFSIGNED | LCCSCF_SKIP_SERVER_CERT_HOSTNAME_CHECK;
-    clientInfo.host = lws_canonical_hostname(wsContext);
+    clientInfo.ssl_connection = LCCSCF_USE_SSL; //| LCCSCF_ALLOW_SELFSIGNED | LCCSCF_SKIP_SERVER_CERT_HOSTNAME_CHECK;
+    clientInfo.host = this->address.c_str();
     clientInfo.address = this->address.c_str();
     clientInfo.port = this->port;
     clientInfo.path = this->path.c_str();
