@@ -12,7 +12,8 @@ private:
 public:
     void onConnSuccess(std::string *sessionId) override {
         cout << "connection succeeded" << endl;
-        std::string ban = "{ \"event\": \"bts:subscribe\", \"data\": { \"channel\": \"diff_order_book_btcusd\" } }";
+        std::string ban = "{ \"type\": \"subscribe\", \"product_ids\": [ \"ETH-USD\", \"ETH-EUR\" ], \"channels\": [ \"level2\", \"heartbeat\", { \"name\": \"ticker\", \"product_ids\": [ \"ETH-BTC\", \"ETH-USD\" ] } ] }";
+        //std::string ban = "{ \"event\": \"bts:subscribe\", \"data\": { \"channel\": \"diff_order_book_btcusd\" } }";
         wsClient->sendMessage(&ban);
     }
 
@@ -34,7 +35,7 @@ public:
     }
 
     void start() {
-        std::string *address = new std::string("ws.bitstamp.net");
+        std::string *address = new std::string("ws-feed.pro.coinbase.com");
         std::string *path = new std::string("/");
         wsClient = new WsRaccoonClient(address, 443, path, this);
         delete address;
