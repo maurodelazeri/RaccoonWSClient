@@ -19,6 +19,8 @@ WsRaccoonClient::WsRaccoonClient(std::string *address, int port, std::string *pa
     this->noMsg = true;
     this->lwsCallback = callback;
 
+    // please check https://libwebsockets.org/lws-api-doc-master/html/structlws__protocols.html
+    // adjust to suit your needs
     protocols_[0] = {
             "zinnion-protocol",
             on_websocket_callback,
@@ -26,7 +28,7 @@ WsRaccoonClient::WsRaccoonClient(std::string *address, int port, std::string *pa
             1024,
             0,
             this,
-            0
+            10
     };
 
     protocols_[1] = {
