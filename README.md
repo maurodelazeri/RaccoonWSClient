@@ -5,6 +5,7 @@ this project has only one dependency https://libwebsockets.org/
 
 if you want to use https://conan.io/ the conanfile.txt is avaiable
 
+#### SSL is enabled by default but you can change [this](https://github.com/maurodelazeri/RaccoonWSClient/blob/master/WsRaccoonClient.cc#L171) to 0 and it will disable SSL
 
 #### example to build with CLION + Conan
 
