@@ -179,6 +179,7 @@ void WsRaccoonClient::netTask() {
     clientInfo.userdata = this;
     wsClient = lws_client_connect_via_info(&clientInfo);
 
+    //TODO: need to implement backoff
     int countdown = 5;
     while (!stop_ || !noMsg) {
         if (!wsClient) {
