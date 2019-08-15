@@ -17,7 +17,9 @@ make
 
 `export SSL_CERT_FILE="~/ca-cert.pem"`
 
+or you can add
 
+`ctxInfo.ssl_ca_filepath = "/home/cacert.pem";`
 
 You can set different parameters as you need, a full list of parameters can be found here https://libwebsockets.org/lws-api-doc-master/html/structlws__context__creation__info.html
 
